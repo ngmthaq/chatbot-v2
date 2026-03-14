@@ -4,19 +4,12 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const logger = require('morgan');
 
-const {
-  throwCommonError,
-  CommonError,
-} = require('./responses/common-error-response');
+const { throwCommonError, CommonError, COMMON_EROR_TYPES } = require('./responses/common-error-response');
 const { ValidationError } = require('./responses/validation-error-response');
 const v1IndexRouter = require('./router/v1-index-router');
 const v1PublicRouter = require('./router/v1-public-router');
 const v1UsersRouter = require('./router/v1-users-router');
-const {
-  requestHandler,
-  errorResponse,
-  errorResponseWithDetails,
-} = require('./utils/express-utils');
+const { requestHandler, errorResponse, errorResponseWithDetails } = require('./utils/express-utils');
 
 const app = express();
 
@@ -41,7 +34,7 @@ app.use('/api/v1/users', v1UsersRouter);
 // catch 404 and forward to error handler
 app.use(
   requestHandler(() => {
-    throwCommonError('NOT_FOUND');
+    throwCommonError(COMMON_EROR_TYPES.NOT_FOUND);
   })
 );
 

@@ -35,10 +35,7 @@ module.exports.successResponse = function (data) {
  * @param {string} code
  * @returns {{ success: boolean, error: { message: string, code: string } }}
  */
-module.exports.errorResponse = function (
-  message,
-  code = 'INTERNAL_SERVER_ERROR'
-) {
+module.exports.errorResponse = function (message, code = 'INTERNAL_SERVER_ERROR') {
   return {
     success: false,
     error: { message, code },
@@ -52,11 +49,7 @@ module.exports.errorResponse = function (
  * @param {string} code
  * @returns {{ success: boolean, error: { message: string, code: string, details: * } }}
  */
-module.exports.errorResponseWithDetails = function (
-  details,
-  message,
-  code = 'INTERNAL_SERVER_ERROR'
-) {
+module.exports.errorResponseWithDetails = function (details, message, code = 'INTERNAL_SERVER_ERROR') {
   return {
     success: false,
     error: { message, code, details },

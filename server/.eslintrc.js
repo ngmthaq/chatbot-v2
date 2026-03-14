@@ -3,11 +3,7 @@ module.exports = {
     node: true,
     es2022: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:import/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:import/recommended', 'plugin:prettier/recommended'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
@@ -21,14 +17,7 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
@@ -42,10 +31,7 @@ module.exports = {
 
     // General code quality rules
     'no-console': 'off', // Allow console in Node.js
-    'no-unused-vars': [
-      'error',
-      { argsIgnorePattern: '^_', args: 'after-used' },
-    ],
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_', args: 'after-used' }],
     'no-var': 'error',
     'prefer-const': 'error',
     'prefer-arrow-callback': 'error',
